@@ -24,7 +24,6 @@
 
 
 fetch("./test.json", {
-    mode: "cors",
     method: 'get',
     headers: {
         'Content-Type': 'application/json'}
@@ -35,10 +34,19 @@ fetch("./test.json", {
       var length = json.result.count
       for(var i = 1; i < json.result.count; i++) {
         var listItem = document.createElement('li');
+        var listItemImage = document.createElement('li');
         listItem.innerHTML = '<strong>' + items[i].Name + '</strong>';
+        listItemImage.innerHTML = "<img src='" + items[i].ImageName + "'>"
         myList.appendChild(listItem);
+        myList.appendChild(listItemImage);
     }
   });
+
+
+
+
+
+
 
   </script>
 </html>
